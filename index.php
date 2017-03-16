@@ -6,7 +6,7 @@
 	<!-- Angular will break without this line. It is not needed for Chrome -->
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 
-	<title>HTML5/Bootstrap/JQuery Starter Template</title>
+	<title>Dungeon Master.v1</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	<!-- Custom CSS -->
-	<!-- <link rel="stylesheet" href="css/custom.css"> -->
+	<!-- <link rel="stylesheet" href="/css/custom.css"> -->
 </head>
 
 <body>
@@ -33,6 +33,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<!-- Custom JavaScript -->
-	<script src="js/custom.js"></script>
+	<script src="/js/custom.js"></script>
 </body>
 </html>
