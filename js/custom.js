@@ -49,10 +49,10 @@ function getMap() {
 
 			for(x = 0; x < current_map_data_length; x++) {
 				var temp_obj = {
-					nView: view_types[parseInt(current_map_data[x]['n_view_types_id_fk'])],
-					eView: view_types[parseInt(current_map_data[x]['e_view_types_id_fk'])],
-					sView: view_types[parseInt(current_map_data[x]['s_view_types_id_fk'])],
-					wView: view_types[parseInt(current_map_data[x]['w_view_types_id_fk'])]
+					nView: view_types[parseInt(current_map_data[x]['n_description'])],
+					eView: view_types[parseInt(current_map_data[x]['e_description'])],
+					sView: view_types[parseInt(current_map_data[x]['s_description'])],
+					wView: view_types[parseInt(current_map_data[x]['w_description'])]
 				};
 
 				current_map[(parseInt(current_map_data[x]['map_row']) - 1)][(parseInt(current_map_data[x]['map_col']) - 1)] = temp_obj;
