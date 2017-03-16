@@ -20,7 +20,7 @@
 
 <body>
 	<div class="col-md-2 col-md-offset-2">
-		<button id="button-get-map" class="btn btn-default">Get Map</button>
+		<button id="button-get-map" class="btn btn-xs btn-default">Get Map</button>
 	</div>
 
 	<!-- JQuery CDN -->
