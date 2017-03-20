@@ -29,20 +29,18 @@ function getMap() {
 		success: function(data) {
 			//Do something
 			current_map_data = data;
-			/*console.log(current_map_data);*/
+			sorted_map_data = data;
 			current_map_data_length = current_map_data.length;
-			console.info("last map_row:", current_map_data[(current_map_data_length - 1)]['map_row']);
-			console.info("last map_col:", current_map_data[(current_map_data_length - 1)]['map_col']);
-			var total_rows = parseInt(current_map_data[(current_map_data_length - 1)]['map_row']) + 1;
-			var total_cols = parseInt(current_map_data[(current_map_data_length - 1)]['map_col']) + 1;
-
-			console.log("total_rows:", total_rows);
-			console.log("total_cols:", total_cols);
+ 
+			sorted_map_data.sort(sortByProperty('map_row'));
+			var total_rows = parseInt(sorted_map_data[0].map_row);
+			sorted_map_data.sort(sortByProperty('map_col'));
+			var total_cols = parseInt(sorted_map_data[0].map_col);
 
 			current_map = [];
-			for(r = 0; r < total_rows; r++) {
+			for(r = 0; r <= total_rows; r++) {
 				current_map_cols = [];
-				for(c = 0; c < total_cols; c++) {
+				for(c = 0; c <= total_cols; c++) {
 					current_map_cols.push(null);
 				}
 
@@ -51,20 +49,21 @@ function getMap() {
 
 			for(x = 0; x < current_map_data_length; x++) {
 				var temp_obj = {
-					/*nView: view_types[parseInt(current_map_data[x]['n_description'])],
-					eView: view_types[parseInt(current_map_data[x]['e_description'])],
-					sView: view_types[parseInt(current_map_data[x]['s_description'])],
-					wView: view_types[parseInt(current_map_data[x]['w_description'])]*/
 					nView: current_map_data[x]['n_description'],
 					eView: current_map_data[x]['e_description'],
 					sView: current_map_data[x]['s_description'],
 					wView: current_map_data[x]['w_description']
 				};
 
-				current_map[(parseInt(current_map_data[x]['map_row']) - 1)][(parseInt(current_map_data[x]['map_col']) - 1)] = temp_obj;
+				current_map[parseInt(current_map_data[x]['map_row'])][parseInt(current_map_data[x]['map_col'])] = temp_obj;
 			}
 
-			console.info(current_map);
+			/*
+				current_map is now a 2dim array consisting of rows of columns.
+				Each tile has an object that describes what is in the 4 directions at that tile.
+				The structure of the array is:
+					current_map[<row>][<col>]
+			*/
 		},
 
 		error: function(xhr, desc, err) {
@@ -73,4 +72,11 @@ function getMap() {
 			console.log("Something broke");
 		}
 	});
+}
+
+function sortByProperty(property) {
+	'use strict';
+	return function (a, b) {
+		return b[property] - a[property]
+	};
 }
