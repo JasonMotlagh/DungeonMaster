@@ -3,7 +3,6 @@ var current_map_cols;
 var current_map_data;
 var current_map_data_length;
 var current_direction = 0;
-
 var directions_array = ["N", "E", "S", "W"];
 
 $(document).ready(function() {
@@ -12,7 +11,6 @@ $(document).ready(function() {
 });
 
 function getMap() {
-	console.log('getMap called');
 	var map_obj = {
 			'map_id': current_map
 		};
@@ -43,27 +41,27 @@ function getMap() {
 				for(c = 0; c <= total_cols; c++) {
 					current_map_cols.push(null);
 				}
-
 				current_map.push(current_map_cols);
 			}
 
 			for(x = 0; x < current_map_data_length; x++) {
-				var temp_obj = {
-					nView: current_map_data[x]['n_description'],
-					eView: current_map_data[x]['e_description'],
-					sView: current_map_data[x]['s_description'],
-					wView: current_map_data[x]['w_description']
-				};
+				var temp_direction = [];
+				temp_direction.push(current_map_data[x]['n_description']);
+				temp_direction.push(current_map_data[x]['e_description']);
+				temp_direction.push(current_map_data[x]['s_description']);
+				temp_direction.push(current_map_data[x]['w_description']);
 
-				current_map[parseInt(current_map_data[x]['map_row'])][parseInt(current_map_data[x]['map_col'])] = temp_obj;
+				current_map[parseInt(current_map_data[x]['map_row'])][parseInt(current_map_data[x]['map_col'])] = temp_direction;
 			}
 
 			/*
 				current_map is now a 2dim array consisting of rows of columns.
-				Each tile has an object that describes what is in the 4 directions at that tile.
+				Each tile has an array that describes what is in the 4 directions at that tile.
 				The structure of the array is:
 					current_map[<row>][<col>]
 			*/
+			console.log(current_map[0]);
+			console.log(current_map[0][6]);
 		},
 
 		error: function(xhr, desc, err) {
