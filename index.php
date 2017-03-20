@@ -34,5 +34,6 @@
 
 	<!-- Custom JavaScript -->
 	<script src="/js/custom.js"></script>
+	<script src="/js/movement.js"></script>
 </body>
 </html>

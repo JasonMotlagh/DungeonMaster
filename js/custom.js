@@ -11,6 +11,7 @@ $(document).ready(function() {
 	$( "#button-get-map" ).on("click", getMap);
 
 	window.addEventListener("keydown", keysPressed, false);
+	window.addEventListener("keyup", keysReleased, false);
 });
 
 function getMap() {
