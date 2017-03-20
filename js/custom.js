@@ -58,10 +58,8 @@ function getMap() {
 				current_map is now a 2dim array consisting of rows of columns.
 				Each tile has an array that describes what is in the 4 directions at that tile.
 				The structure of the array is:
-					current_map[<row>][<col>]
+					current_map[<row>][<col>][<current_direction]
 			*/
-			console.log(current_map[0]);
-			console.log(current_map[0][6]);
 		},
 
 		error: function(xhr, desc, err) {
