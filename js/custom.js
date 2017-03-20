@@ -4,10 +4,13 @@ var current_map_data;
 var current_map_data_length;
 var current_direction = 0;
 var directions_array = ["N", "E", "S", "W"];
+var keys = [];
 
 $(document).ready(function() {
 	current_map = 1;
 	$( "#button-get-map" ).on("click", getMap);
+
+	window.addEventListener("keydown", keysPressed, false);
 });
 
 function getMap() {
