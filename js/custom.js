@@ -9,6 +9,7 @@ var keys = [];
 $(document).ready(function() {
 	current_map = 1;
 	$( "#button-get-map" ).on("click", getMap);
+	$( "#button-get-map-test" ).on("click", getMapTest);
 
 	window.addEventListener("keydown", keysPressed, false);
 	window.addEventListener("keyup", keysReleased, false);
@@ -64,6 +65,33 @@ function getMap() {
 				The structure of the array is:
 					current_map[<row>][<col>][<current_direction]
 			*/
+		},
+
+		error: function(xhr, desc, err) {
+			console.log(xhr);
+			console.log("Details: " + desc + "\nError:" + err);
+			console.log("Something broke");
+		}
+	});
+}
+
+function getMapTest() {
+	var map_obj = {
+			'map_id': current_map
+		};
+
+	$.ajax({
+		url: '/scripts/getMap.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {'map_obj': map_obj},
+		complete: function(xhr, textStatus) {
+			//called when complete
+		},
+
+		success: function(data) {
+			//Do something
+			console.log(data);
 		},
 
 		error: function(xhr, desc, err) {

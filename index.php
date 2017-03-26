@@ -22,6 +22,9 @@
 	<div class="col-md-2 col-md-offset-2">
 		<button id="button-get-map" class="btn btn-xs btn-default">Get Map</button>
 	</div>
+	<div class="col-md-2 col-md-offset-2">
+		<button id="button-get-map-test" class="btn btn-xs btn-default">Get Map Test</button>
+	</div>
 
 	<!-- JQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
