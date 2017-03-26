@@ -1,15 +1,26 @@
+var current_map;
+var current_map_cols;
+var current_map_data;
+var current_map_data_length;
+var current_direction = 0;
+var directions_array = ["N", "E", "S", "W"];
+var keys = [];
+
 $(document).ready(function() {
+	current_map = 1;
 	$( "#button-get-map" ).on("click", getMap);
+
+	window.addEventListener("keydown", keysPressed, false);
+	window.addEventListener("keyup", keysReleased, false);
 });
 
 function getMap() {
-	console.log('getMap called');
 	var map_obj = {
-			'map_id':	1
+			'map_id': current_map
 		};
 
 	$.ajax({
-		url: 'scripts/getMap.php',
+		url: '/scripts/getMap.php',
 		type: 'POST',
 		dataType: 'json',
 		data: {'map_obj': map_obj},
@@ -19,26 +30,53 @@ function getMap() {
 
 		success: function(data) {
 			//Do something
-			//console.log(data);
-			console.info(data.length);
-			console.info("last map_row:", data[(data.length - 1)]['map_row']);
-			console.info("last map_col:", data[(data.length - 1)]['map_col']);
-			var total_rows = parseInt(data[(data.length - 1)]['map_row']) + 1;
-			var total_cols = parseInt(data[(data.length - 1)]['map_col']) + 1;
-			var array_rows = new array();
-			var array_cols = new array();
+			current_map_data = data;
+			sorted_map_data = data;
+			current_map_data_length = current_map_data.length;
+ 
+			sorted_map_data.sort(sortByProperty('map_row'));
+			var total_rows = parseInt(sorted_map_data[0].map_row);
+			sorted_map_data.sort(sortByProperty('map_col'));
+			var total_cols = parseInt(sorted_map_data[0].map_col);
 
-			for(r = 0; r < total_rows; r++) {
-				for(c = 0; c < total_cols; c++) {
-					
+			current_map = [];
+			for(r = 0; r <= total_rows; r++) {
+				current_map_cols = [];
+				for(c = 0; c <= total_cols; c++) {
+					current_map_cols.push(null);
 				}
+				current_map.push(current_map_cols);
 			}
+
+			for(x = 0; x < current_map_data_length; x++) {
+				var temp_direction = [];
+				temp_direction.push(current_map_data[x]['n_description']);
+				temp_direction.push(current_map_data[x]['e_description']);
+				temp_direction.push(current_map_data[x]['s_description']);
+				temp_direction.push(current_map_data[x]['w_description']);
+
+				current_map[parseInt(current_map_data[x]['map_row'])][parseInt(current_map_data[x]['map_col'])] = temp_direction;
+			}
+
+			/*
+				current_map is now a 2dim array consisting of rows of columns.
+				Each tile has an array that describes what is in the 4 directions at that tile.
+				The structure of the array is:
+					current_map[<row>][<col>][<current_direction]
+			*/
 		},
 
 		error: function(xhr, desc, err) {
-			console.log(xhr)
+			console.log(xhr);
 			console.log("Details: " + desc + "\nError:" + err);
 			console.log("Something broke");
 		}
 	});
+}
+
+function sortByProperty(property) {
+	'use strict';
+	return function (a, b) {
+		return b[property] - a[property]
+	};
 }
