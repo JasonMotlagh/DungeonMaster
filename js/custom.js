@@ -81,7 +81,7 @@ function getMapTest() {
 		};
 
 	$.ajax({
-		url: '/scripts/getMap.php',
+		url: '/scripts/getMapTest.php',
 		type: 'POST',
 		dataType: 'json',
 		data: {'map_obj': map_obj},
