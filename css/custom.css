@@ -1,0 +1,31 @@
+body {
+	background-color: #000000;
+}
+
+.player01 {
+	color: #00FF00;
+}
+.player01-background {
+	background-color: #00FF00;
+}
+
+.player02 {
+	color: #FFFF00;
+}
+.player02-background {
+	background-color: #FFFF00;
+}
+
+.player03 {
+	color: #F7931E;
+}
+.player03-background {
+	background-color: #F7931E;
+}
+
+.player04 {
+	color: #00FFFF;
+}
+.player04-background {
+	background-color: #00FFFF;
+}

@@ -3,7 +3,7 @@ var current_map_cols;
 var current_map_data;
 var current_map_data_length;
 var current_direction = 0;
-var directions_array = ["N", "E", "S", "W"];
+var directions_array = ["n", "e", "s", "w"];
 var keys = [];
 
 $(document).ready(function() {
@@ -57,6 +57,8 @@ function getMap() {
 
 				current_map[parseInt(current_map_data[x]['map_row'])][parseInt(current_map_data[x]['map_col'])] = temp_direction;
 			}
+
+			console.log("Map data processed.");
 
 			/*
 				current_map is now a 2dim array consisting of rows of columns.
