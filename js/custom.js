@@ -9,7 +9,6 @@ var keys = [];
 $(document).ready(function() {
 	current_map = 1;
 	$( "#button-get-map" ).on("click", getMap);
-	$( "#button-get-map-test" ).on("click", getMapTest);
 
 	window.addEventListener("keydown", keysPressed, false);
 	window.addEventListener("keyup", keysReleased, false);
