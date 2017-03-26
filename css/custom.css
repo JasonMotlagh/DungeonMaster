@@ -2,30 +2,65 @@ body {
 	background-color: #000000;
 }
 
-.player01 {
+.padding-none {
+	padding: 0px;
+}
+
+.champion {
+	background-color: #808080;
+}
+
+.champion-info-hand {
+	background-color: #ffffff;
+	border: solid 1px #000000;
+}
+
+.champion-1 {
 	color: #00FF00;
 }
-.player01-background {
+.champion-1-background {
 	background-color: #00FF00;
 }
 
-.player02 {
+.champion-2 {
 	color: #FFFF00;
 }
-.player02-background {
+.champion-2-background {
 	background-color: #FFFF00;
 }
 
-.player03 {
+.champion-3 {
 	color: #F7931E;
 }
-.player03-background {
+.champion-3-background {
 	background-color: #F7931E;
 }
 
-.player04 {
+.champion-4 {
 	color: #00FFFF;
 }
-.player04-background {
+.champion-4-background {
 	background-color: #00FFFF;
+}
+
+.champion-name {
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	border-top: solid 2px #000000;
+}
+
+.champion-info-bars {
+	color: #000000;
+	font-weight: normal;
+	font-size: 10px;
+	padding: 0px 5px;
+}
+
+.middle-info-bar {
+	margin: 9px 0px;
+}
+
+.text-white {
+	color: #ffffff;
 }
