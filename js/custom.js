@@ -75,33 +75,6 @@ function getMap() {
 	});
 }
 
-function getMapTest() {
-	var map_obj = {
-			'map_id': current_map
-		};
-
-	$.ajax({
-		url: '/scripts/getMapTest.php',
-		type: 'POST',
-		dataType: 'json',
-		data: {'map_obj': map_obj},
-		complete: function(xhr, textStatus) {
-			//called when complete
-		},
-
-		success: function(data) {
-			//Do something
-			console.log(data);
-		},
-
-		error: function(xhr, desc, err) {
-			console.log(xhr);
-			console.log("Details: " + desc + "\nError:" + err);
-			console.log("Something broke");
-		}
-	});
-}
-
 function sortByProperty(property) {
 	'use strict';
 	return function (a, b) {
