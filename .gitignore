@@ -1,0 +1,3 @@
+# Block any files that need to remain blocked.
+/sftp-config.json
+/scripts/config.ini
