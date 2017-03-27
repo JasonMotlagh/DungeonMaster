@@ -15,12 +15,41 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	<!-- Custom CSS -->
-	<!-- <link rel="stylesheet" href="/css/custom.css"> -->
+	<link rel="stylesheet" href="/css/custom.css">
 </head>
 
 <body>
 	<div class="col-md-2 col-md-offset-2">
 		<button id="button-get-map" class="btn btn-xs btn-default">Get Map</button>
+	</div>
+
+	<div id="main-container" class="container">
+		<div id="champion-container" class="col-sm-12 padding-none">
+			<div id="champion-1" class="col-sm-3 padding-none champion">
+				<div id="champion-1-info" class="col-sm-8">
+					<div id="champion-1-hand-1" class="col-sm-6 champion-info-hand ">
+					</div>
+					<div id="champion-1-hand-2" class="col-sm-6 champion-info-hand ">
+					</div>
+
+					<div id="champion-1-health" class="col-sm-12 champion-1-background champion-info-bars">
+						HEALTH
+					</div>
+					<div id="champion-1-mana" class="col-sm-12 champion-1-background champion-info-bars middle-info-bar">
+						MANA
+					</div>
+					<div id="champion-1-stamina" class="col-sm-12 champion-1-background champion-info-bars">
+						STAMINA
+					</div>
+				</div>
+				<div id="champion-1-photo" class="col-sm-4">
+					<img src="/images/champion1.png" class="img-responsive center-block">
+				</div>
+				<div id="champion-1-name" class="col-sm-12 champion-name">
+					Hissssa Lizar Of Makan
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- JQuery CDN -->
