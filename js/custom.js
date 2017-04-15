@@ -59,6 +59,7 @@ function getMap() {
 			}
 
 			console.log("Map data processed.");
+			console.info(current_map);
 
 			/*
 				current_map is now a 2dim array consisting of rows of columns.

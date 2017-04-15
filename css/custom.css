@@ -64,3 +64,9 @@ body {
 .text-white {
 	color: #ffffff;
 }
+
+.base-tile {
+	padding: 0px;
+	background-color: #ffffff;
+	border: 1px solid #999999;
+}

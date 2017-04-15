@@ -29,14 +29,14 @@ function keysPressed(e) {
 	}
 */
 
-	if (keys[18] && keys[37]) {
-		// Alt/Option + Left
+	if (keys[16] && keys[37]) {
+		// Shift + Left
 		// Turn to the Left
 		console.info("Turning Left");
 		changeDirection("left");
 		console.log("Facing", directions_array[current_direction]);
-	} else if (keys[18] && keys[39]) {
-		// Alt/Option + Right
+	} else if (keys[16] && keys[39]) {
+		// Shift + Right
 		// Turn to the Right
 		console.info("Turning Right");
 		changeDirection("right");

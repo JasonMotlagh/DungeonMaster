@@ -19,11 +19,49 @@
 </head>
 
 <body>
-	<div class="col-md-2 col-md-offset-2">
-		<button id="button-get-map" class="btn btn-xs btn-default">Get Map</button>
+	<div class="container">
+		<div class="col-md-2 col-md-offset-2">
+			<button id="button-get-map" class="btn btn-xs btn-default">Get Map</button>
+		</div>
 	</div>
 
 	<div id="main-container" class="container">
+		<div class="row">
+			<div id="ul-tile" class="col-xs-1 col-xs-offset-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="um-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="ur-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+		</div>
+		<div class="row">
+			<div id="ml-tile" class="col-xs-1 col-xs-offset-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="mm-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="mr-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+		</div>
+		<div class="row">
+			<div id="ll-tile" class="col-xs-1 col-xs-offset-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="lm-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+			<div id="lr-tile" class="col-xs-1 base-tile">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+
+	<!-- <div id="main-container" class="container">
 		<div id="champion-container" class="col-sm-12 padding-none">
 			<div id="champion-1" class="col-sm-3 padding-none champion">
 				<div id="champion-1-info" class="col-sm-8">
@@ -50,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- JQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
